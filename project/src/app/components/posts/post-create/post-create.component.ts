@@ -15,11 +15,11 @@ export class PostCreateComponent implements OnInit {
   saveNewPost(form: NgForm) {
     if (form.valid) {
       const post: Post = {
+        id: null,
         title: form.value.title,
         content: form.value.content,
       };
       this.postService.addPost(post);
-      console.log(this.postService.getPosts());
       form.resetForm();
     } else {
       return;
